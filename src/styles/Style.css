@@ -1,0 +1,58 @@
+.app {
+    background-color: #343F3E;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .header {
+    padding: 1% 1% 1% 1%;
+    opacity: 50;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .amblem {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .amblem_image {
+    width: 20vmin;
+  }
+  
+  .title {
+    text-align: center;
+    color: rgb(200, 167, 37);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 4vh;
+    width: calc(100vw - 20vmin - 5vmin);
+    font-size: 3vw;
+  }
+  
+  .area {
+    position: relative;
+    margin: auto;
+    min-height: 90vh;
+  }
+
+  
+  .footer {
+    height: 5vh;
+    text-align: center;
+    padding: 1% 1% 1% 1%;
+    color: rgb(120, 127, 134);
+    font-size: calc(8px + 1vmin);
+    ;
+    /* background-color: darkmagenta; */
+  }
+  .logoutBtn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 0.2vh;
+    right: 1vw;
+  }
+  .logoutImg{
+    height: 10vmin;
+  }

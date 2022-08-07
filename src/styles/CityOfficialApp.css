@@ -1,0 +1,134 @@
+
+ .contentArea {
+    position: relative;
+    width: 100%;
+  }
+  .mapArea {
+
+    border: 1vmin solid rgb(200, 167, 37);
+    width: 70vw;
+    margin: 6% auto auto auto;
+  }
+  .mapAreaPick .leaflet-container {
+    height: 35vh;
+    width: 100%;
+    margin-bottom: 1vh;
+  }
+  .mapArea .leaflet-container {
+    height: 78vh;
+    width: 70vw;
+  }
+  .mapDiv {
+    margin-top: 3vh;
+  }
+  
+  .menu {
+    margin-left: 1vw;
+    margin-top: 1.5vh;
+    font-size: calc(3vmin);
+  
+  }
+  .menu_button {
+    background-color: transparent;
+    border: 0px
+  }
+  
+  .menu_button_img_reports {
+    height: 16vmin;
+    background-color: transparent;
+  }
+  
+  .menu_button_img_map {
+    height: 16vmin;
+    background-color: transparent;
+  }
+  
+  .menu_button_img_arrived {
+    height: 17.5vmin;
+    background-color: transparent;
+  }
+  .menu_button_img_events {
+    height: 16vmin;
+    background-color: transparent;
+  }
+  .button_label {
+    text-align: center;
+    color: azure;
+  }
+
+
+  .logoutBtn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 0.2vh;
+    right: 1vw;
+  }
+  .logoutImg{
+    height: 10vmin;
+  }
+
+  
+.event{
+  width: 85%;
+  background-color: aqua;
+  margin: 2vh auto 0 auto;
+  border-radius: 3vmin;
+  min-height: 12vh;
+  padding: 5px 5px 5px 5px;
+}
+.newEventBtn {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 8%;
+  left: 36vmin;
+}
+.labelForNewEventBtn {
+  height: 60%;
+  color: aliceblue;
+  display: inline;
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  font-size: large;
+
+}
+.newEvent {
+  position: relative;
+  height: 11vh;
+}
+.plusImg {
+  width: 10vmin;
+}
+.newEventExtended{
+  position: relative;
+  height: 40vh;
+}
+.eventTitle{
+  width: 50vmin;
+  font-size: 15px;
+  height: 18px;
+  margin: auto;
+  position: absolute;
+  top: 1vh;
+  left: 7vw;
+}
+.eventInfo{
+  width: 50vmin;
+  height: 30vh;
+  position: absolute;
+  top: 7vh;
+  left: 7vw;
+}
+.newEventBtn2{
+  background: none;
+  border: none;
+  position: absolute;
+}
+.combo{
+  height: 24px;
+  position: absolute;
+  top: 1vh;
+  left: 70vmin;
+}

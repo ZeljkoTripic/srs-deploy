@@ -1,0 +1,152 @@
+.contentArea {
+    position: relative;
+    width: 100%;
+}
+
+.infoButton {
+    background-color: transparent;
+    border-style: none;
+    position: absolute;
+    right: 3%;
+    top: 18%;
+}
+
+.infoButtonExpanded {
+    background-color: transparent;
+    border-style: none;
+    position: absolute;
+    right: 3%;
+    top: 10%;
+}
+
+.assignment {
+
+    background-color: rgb(120, 127, 134);
+    margin: 3vh auto 0 auto;
+    width: 90%;
+    border-radius: 40px;
+    height: 15vh;
+    text-align: center;
+    position: relative;
+    font-size: 2vmin;
+}
+
+.assignmentExpanded {
+
+    background-color: rgb(157, 165, 173);
+    margin: 3vh auto 0 auto;
+    width: 90%;
+    border-radius: 40px;
+    height: 50vh;
+    position: relative;
+    font-size: 3vmin;
+    padding-bottom: 5px;
+}
+
+.info {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.btn1 {
+    position: absolute;
+    top: 50%;
+    left: 72%;
+    font-size: 3.5vmin;
+    border-radius: 10px;
+    text-align: center;
+    width: 15vmin;
+    background-color: rgb(72, 137, 137);
+    border-color: rgb(48, 107, 159);
+}
+
+.btn2 {
+    position: absolute;
+    top: 82%;
+    left: 72%;
+    font-size: 3.5vmin;
+    border-radius: 10px;
+    width: 15vmin;
+    background-color: rgb(72, 137, 137);
+    border-color: rgb(48, 107, 159);
+}
+
+.txtArea1 {
+    position: absolute;
+    top: 41%;
+    left: 2%;
+    width: 63%;
+    height: 22%;
+    border-radius: 10px;
+    padding: 3px 3px 3px 5px;
+    font-size: calc(3px + 2vh);
+
+}
+
+.txtArea2 {
+    position: absolute;
+    top: 73%;
+    left: 2%;
+    width: 63%;
+    height: 22%;
+    border-radius: 10px;
+    padding: 3px 3px 3px 5px;
+    font-size: calc(3px + 2vh);
+}
+
+.info1 {
+    position: absolute;
+    top: 33%;
+    left: 2%;
+}
+
+.info2 {
+    position: absolute;
+    top: 66%;
+    left: 2%;
+}
+
+.buttonImg {
+    width: 10vh;
+}
+
+.buttonImgExpanded {
+    width: 13vh;
+}
+
+#logout {
+    /* position: absolute; */
+    background-color: transparent;
+    border: none;
+    margin-left: 86.5vw;
+}
+
+#logout:hover {
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.menu_button_logout_img {
+    width: 12vmin;
+}
+
+.area {
+    position: relative;
+}
+.infoButton:hover{
+    opacity: 0.6;
+      transition: 0.5s;
+  }
+  .infoButtonExpanded:hover{
+    opacity: 0.6;
+      transition: 0.5s;
+  }
+  .btn1:hover{
+    opacity: 0.6;
+      transition: 0.5s;
+  }
+  .btn2:hover{
+    opacity: 0.6;
+      transition: 0.5s;
+  }

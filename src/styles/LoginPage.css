@@ -1,0 +1,140 @@
+.login-page{
+    background-color: #505A5B;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 70vmin;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2% 2% 2% 2%;
+    border-radius: 60px;
+
+}
+
+.login-page input{
+    font-size: 20px;
+    padding: 10px 10px;
+    width: 80%;
+    border: 0;
+    border-radius: 5px;
+    outline:none;
+   
+}
+
+.sign-in-btn{
+    font-size: 22px;
+    background-color:cornflowerblue;
+    color: azure;
+    font-weight: bold;
+    display: block;
+    margin: 20px auto;
+    padding: 3%;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.sign-in-btn:hover{
+    background-color: azure;
+    color: cornflowerblue;
+    transition: 0.5s;
+}
+
+.no-registration-btn{
+    vertical-align:middle;
+    height:4em;
+    font-size: 15px;
+    width: 120px;
+    background-color:lawngreen;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    margin: 20px auto;
+    padding: 2%;
+    border: 0px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.no-registration-btn:hover{
+    background-color: azure;
+    color: cornflowerblue;
+    transition: 0.5s;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.register-btn:hover{
+    background-color: azure;
+    color: cornflowerblue;
+    transition: 0.5s;
+}
+
+.register-btn{
+    width:120px;
+    height:4em;
+    font-size: 15px;
+    background-color:lawngreen;
+    color: black;
+    font-weight: bold;
+    padding: 2%;
+    border: 0px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.register-btn:hover{
+    background-color: azure;
+    color: cornflowerblue;
+    transition: 0.5s;
+}
+  .header-form{
+    color: azure;
+    font-size: 25px;
+    margin: 15px 0;
+  }
+
+  .container-1{
+    display: flex;
+    justify-content: center;
+}
+
+.register-submit-btn{
+    width:140px;
+    height: 7vh;
+    font-size: 15px;
+    background-color:lawngreen;
+    color: black;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 2%;
+    border: 0px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.register-submit-btn:hover{
+    background-color: azure;
+    color: cornflowerblue;
+    transition: 0.5s;
+}
+
+  .infoMessage {
+    color: aliceblue;
+    font: 20px;
+    text-align: center;
+    margin: auto;
+  }
+
+.link {
+    margin: auto;
+    text-decoration: none
+    ;}
