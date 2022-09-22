@@ -1,140 +1,79 @@
-.login-page{
-    background-color: #505A5B;
-    justify-content: center;
-    align-items: center;
+.login-page {
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    position: relative;
-    width: 70vmin;
+    margin-top: 5vh;
+    width: 65vmin;
     margin-left: auto;
     margin-right: auto;
     padding: 2% 2% 2% 2%;
-    border-radius: 60px;
-
 }
 
-.login-page input{
+.login-page input {
     font-size: 20px;
     padding: 10px 10px;
     width: 80%;
     border: 0;
     border-radius: 5px;
-    outline:none;
-   
+    outline: none;
+
 }
 
-.sign-in-btn{
-    font-size: 22px;
-    background-color:cornflowerblue;
-    color: azure;
-    font-weight: bold;
+.sign-in-btn {
+    font-size: calc(2px + 2vmin);
+    color: rgb(255, 255, 255);
     display: block;
     margin: 20px auto;
     padding: 3%;
     border: 0;
     border-radius: 5px;
     outline: none;
+    background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+.sign-in-btn:hover {
+    background-position: left;
+}
+.btn:hover {
+    background-position: left;
 }
 
-.sign-in-btn:hover{
-    background-color: azure;
-    color: cornflowerblue;
-    transition: 0.5s;
-}
-
-.no-registration-btn{
-    vertical-align:middle;
-    height:4em;
-    font-size: 15px;
+.btn {
+    vertical-align: middle;
+    height: 60px;
+    font-size: calc(2px + 1.8vmin);
     width: 120px;
-    background-color:lawngreen;
-    color: black;
-    font-weight: bold;
+    background-color: lawngreen;
+    color: white;
     display: inline-block;
-    margin: 20px auto;
     padding: 2%;
     border: 0px;
     border-radius: 5px;
     outline: none;
+    background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
 }
 
-.no-registration-btn:hover{
-    background-color: azure;
-    color: cornflowerblue;
-    transition: 0.5s;
-}
-
-.buttons{
+.buttons {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
+    font-size: calc(2px + 2vmin);
 }
 
-.register-btn:hover{
-    background-color: azure;
-    color: cornflowerblue;
-    transition: 0.5s;
-}
-
-.register-btn{
-    width:120px;
-    height:4em;
-    font-size: 15px;
-    background-color:lawngreen;
-    color: black;
-    font-weight: bold;
-    padding: 2%;
-    border: 0px;
-    border-radius: 5px;
-    outline: none;
-}
-
-.register-btn:hover{
-    background-color: azure;
-    color: cornflowerblue;
-    transition: 0.5s;
-}
-  .header-form{
-    color: azure;
+.header-form {
+    color: rgb(255, 255, 255);
     font-size: 25px;
     margin: 15px 0;
-  }
-
-  .container-1{
-    display: flex;
-    justify-content: center;
 }
 
-.register-submit-btn{
-    width:140px;
-    height: 7vh;
-    font-size: 15px;
-    background-color:lawngreen;
-    color: black;
-    font-weight: bold;
-    margin: 20px 0;
-    padding: 2%;
-    border: 0px;
-    border-radius: 5px;
-    outline: none;
+#infoMessage {
+    margin: 15px auto auto auto;
+    font-size: 20px;
 }
-
-.register-submit-btn:hover{
-    background-color: azure;
-    color: cornflowerblue;
-    transition: 0.5s;
-}
-
-  .infoMessage {
-    color: aliceblue;
-    font: 20px;
-    text-align: center;
-    margin: auto;
-  }
 
 .link {
     margin: auto;
-    text-decoration: none
-    ;}
+    text-decoration: none;
+}

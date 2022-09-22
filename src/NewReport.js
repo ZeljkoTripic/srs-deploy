@@ -1,37 +1,64 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet'
+import axios from 'axios';
+import { MapContainer, TileLayer, Marker, Polygon } from 'react-leaflet'
+import configuration from './configuration.json'
 import './styles/CitizenApp.css';
 
-function NewReport(username) {
+function NewReport(username, password, id) {
 
-    let title = "";
-    let content = "";
-    let note = "";
-    let type = "POZAR";
+    const [title, changeTitle] = useState("");
+    const [content, changeContent] = useState("");
+    const [note, changeNote] = useState("");
+    const [type, changeType] = useState("");
+    const [message, changeMessage] = useState("");
+    const [position, setPosition] = useState([44.78798121640895, 17.201115245677336])
 
     const submit = () => {
         if (44.78798121640895 === position[0] && 17.201115245677336 === position[1])
-            changeMessage("odaberite lokaciju na mapi")
-        else
-            changeMessage("")
-        console.log(title + note + content + type + "  " + position);
+            changeMessage("Odaberite lokaciju na mapi!")
+        else if ((title === "" && content === "") || type === "")
+            changeMessage("Morate odabrati tip prijave i unijeti naslov ili sadržaj!")
+        else {
+            axios.post(configuration.serverBaseURL+"/reports",
+                {
+                    "type": type,
+                    "content": content,
+                    "note": note,
+                    "title": title,
+                    "creator": id,
+                    "x": position[0],
+                    "y": position[1]
+                }
+                ,
+                { headers: { 'Content-Type': 'application/json' } }).then((response) => {
+                    changeMessage("Poslato!")
 
-        //logika za slanje prijave i ispis odgovarajuce poruke
+                }).catch((error) => {
+                    changeMessage("Problem sa serverom!")
+                })
+        }
+
     }
 
-    const [message, changeMessage] = useState("");
+    const getLocation = () => {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            setPosition([position.coords.latitude, position.coords.longitude])
+        },function(error){
+            alert(error.message);
+       })
+    };
 
     const handleTitleChanged = event => {
-        title = event.target.value;
+        changeTitle(event.target.value);
     }
     const handleContentChanged = event => {
-        content = event.target.value;
+        changeContent(event.target.value);
     }
     const handleNoteChanged = event => {
-        note = event.target.value;
+        changeNote(event.target.value);
     }
     const handleTypeChanged = event => {
-        type = event.target.value;
+        changeType(event.target.value);
     }
 
     const polygon = [
@@ -110,7 +137,7 @@ function NewReport(username) {
     ]
     const limeOptions = { color: 'lime' }
 
-    const [position, setPosition] = useState([44.78798121640895, 17.201115245677336])
+    
 
     const markerRef = useRef(null)
     const eventHandlers = useMemo(
@@ -118,15 +145,13 @@ function NewReport(username) {
             dragend() {
                 const marker = markerRef.current
                 if (marker != null) {
-                    //preuzimanje novih koordinata
-                    //slanje novih kordinata
                     const pos = marker.getLatLng()
-                    // console.log(pos)
                     setPosition([pos.lat, pos.lng])
+                    console.log(position)
                 }
             },
         }),
-        [],
+
     )
 
     return (
@@ -138,37 +163,37 @@ function NewReport(username) {
                     <br />
                     {(username === "guest" || username === "") ?
                         <select name="report_type" id="type" className="combo1" onChange={handleTypeChanged}>
-                            <option value="POZAR">POZAR</option>
+                            <option value="POZAR">POŽAR</option>
                             <option value="POPLAVA">POPLAVA</option>
-                            <option value="NEZGODA">SAOBRACAJNA NEZGODA</option>
+                            <option value="SAOBRACAJNA NEZGODA">SAOBRAĆAJNA NEZGODA</option>
                             <option value="NASILJE">NASILJE</option>
-                            <option value="MITO">MITO I KORUPCIJA</option>
-                            <option value="MEDICINA">HITNA MEDICINSKA SITUACIJA</option>
+                            <option value="MITO I KORUPCIJA">MITO I KORUPCIJA</option>
+                            <option value="HITNA MEDICINSKA SITUACIJA">HITNA MEDICINSKA SITUACIJA</option>
                             <option value="MIGRANTI">MIGRANTI</option>
-                            <option value="RED">JAVNI RED I MIR</option>
+                            <option value="JAVNI RED I MIR">JAVNI RED I MIR</option>
                         </select>
                         :
                         <select name="report_type" id="type" className="combo1" onChange={handleTypeChanged}>
-                            <option value="POZAR">POZAR</option>
+                            <option value="POZAR">POŽAR</option>
                             <option value="POPLAVA">POPLAVA</option>
-                            <option value="NEZGODA">SAOBRACAJNA NEZGODA</option>
+                            <option value="SAOBRACAJNA NEZGODA">SAOBRAćAJNA NEZGODA</option>
                             <option value="NASILJE">NASILJE</option>
-                            <option value="MITO">MITO I KORUPCIJA</option>
-                            <option value="MEDICINA">HITNA MEDICINSKA SITUACIJA</option>
+                            <option value="MITO I KORUPCIJA">MITO I KORUPCIJA</option>
+                            <option value="HITNA MEDICINSKA SITUACIJA">HITNA MEDICINSKA SITUACIJA</option>
                             <option value="MIGRANTI">MIGRANTI</option>
-                            <option value="RED">JAVNI RED I MIR</option>
+                            <option value="JAVNI RED I MIR">JAVNI RED I MIR</option>
                             <option value="KANALIZACIJA">KANALIZACIJA</option>
                             <option value="RASVJETA">RASVJETA</option>
                             <option value="STRUJA">STRUJA</option>
                             <option value="PRIVREDA">PRIVREDNICI</option>
                             <option value="VODOVOD">VODOVOD</option>
                             <option value="ASFALT">ASFALT</option>
-                            <option value="BLOKADA">NEPROHODAN PUT</option>
-                            <option value="PUT">OSTECEN PUT</option>
+                            <option value="NEPROHODAN PUT">NEPROHODAN PUT</option>
+                            <option value="OSTECEN PUT">OSTEćEN PUT</option>
                             <option value="GRIJANJE">GRIJANJE</option>
-                            <option value="SMECE">SMECE</option>
+                            <option value="SMECE">SMEĆE</option>
                             <option value="KANALIZACIJA">KANALIZACIJA</option>
-                            <option value="SAOB_SIGN">SAOBRACAJNA SIGNALIZACIJA</option>
+                            <option value="SAOBRACAJNA SIGNALIZACIJA">SAOBRAćAJNA SIGNALIZACIJA</option>
                             <option value="PARKIRANJE">PARKIRANJE</option>
                         </select>
                     }
@@ -181,36 +206,36 @@ function NewReport(username) {
                 <div>
                     <label className="desc">Sadržaj</label>
                     <br />
-                    <textarea id="content" onChange={handleContentChanged}></textarea>
+                    <textarea id="content" className="text-area" onChange={handleContentChanged}></textarea>
                 </div>
                 <div>
                     <label className="desc">Napomena</label>
                     <br />
-                    <textarea id="note" onChange={handleNoteChanged}></textarea>
+                    <textarea id="note" className="text-area" onChange={handleNoteChanged}></textarea>
                 </div>
-                <div>
-                    <div className="mapAreaPick">
-                        <MapContainer center={[44.78798121640895, 17.201115245677336]} zoom={12} scrollWheelZoom={true}>
-                            <TileLayer
-                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-                            <Polygon pathOptions={limeOptions} positions={polygon}></Polygon>
-                            <Marker
-                                draggable={true}
-                                eventHandlers={eventHandlers}
-                                position={position}
-                                ref={markerRef}>
-                            </Marker>
-                        </MapContainer>
 
-                    </div>
+                <div className="mapAreaPick2">
+                    <MapContainer center={[44.78798121640895, 17.201115245677336]} zoom={12} scrollWheelZoom={true}>
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://api.maptiler.com/maps/topographique/{z}/{x}/{y}.png?key=FyCQP140ucb9UHWRdtFB"
+                        />
+                        <Polygon pathOptions={limeOptions} positions={polygon}></Polygon>
+                        <Marker
+                            draggable={true}
+                            eventHandlers={eventHandlers}
+                            position={position}
+                            ref={markerRef}>
+                        </Marker>
+                    </MapContainer>
+                </div>
+                <p className="infoMessage1">{message}</p>
+                <div>
+                    <button className="submit" onClick={getLocation}>Koristi lokaciju uređaja</button>
                 </div>
                 <div>
                     <button className="submit" onClick={submit}>Podnesi prijavu</button>
                 </div>
-                <p className="infoMessage">{message}</p>
-                <div></div>
             </div>
         </div>
     );

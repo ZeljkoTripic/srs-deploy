@@ -1,27 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import './styles/CityOfficialApp.css';
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet'
 import L from 'leaflet';
-import configuration from './configuration.json'
-import dangerImg from './danger.png'
-import infoImg from './info.png'
-import workImg from './work.png'
-import './styles/CityOfficialApp.css';
 
-function CityMap() {
+function CityMapLocation(x,y) {
 
-    const [events, changeEvents] = useState(null)
-
-    useEffect(() => {
-        axios.get(configuration.serverBaseURL + "/events/active",
-            { headers: { 'Content-Type': 'application/json' } }).then((response) => {
-                changeEvents(response.data)
-                console.log(response.data)
-
-            }).catch((error) => {
-
-            })
-    },[])
+    // logika za dobavljanje desavanja
 
     const polygon = [
         [44.8726118, 17.2588105],
@@ -89,7 +73,7 @@ function CityMap() {
         [44.8078562, 17.2241349],
         [44.8127276, 17.2227617],
         [44.8212515, 17.2241349],
-        [44.8256347, 17.223105],
+        [44.8256347, 17.223105], 
         [44.8353741, 17.2244783],
         [44.8446249, 17.2399278],
         [44.8487629, 17.2461076],
@@ -101,33 +85,33 @@ function CityMap() {
 
     return (
         <div className="mapArea">
-            <MapContainer center={[44.78798121640895, 17.201115245677336]} zoom={12} scrollWheelZoom={true} key="1">
+            <MapContainer center={[44.78798121640895, 17.201115245677336]} zoom={12} scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {events && events.map((event) => event.type === "INFORMACIJE" ? addMarkers(event.title, event.desc, event.info, event.date, event.x, event.y, "./info.png", event.eventCreator.service) : (event.type === "OPASNOST" ? addMarkers(event.title, event.desc, event.info, event.date, event.x, event.y, "./danger.png", event.eventCreator.service) : addMarkers(event.title, event.desc, event.info, event.date, event.x, event.y, "./work.png", event.eventCreator.service)))};
+                {addMarkers("zadatak", x, y,"./work.png")};
                 <Polygon pathOptions={limeOptions} positions={polygon} />
             </MapContainer>
         </div>
 
     );
 }
-function addMarkers(title, desc, info, date, x, y, icon,creator) {
+function addMarkers(event, x, y,icon) {
     const markerIcon = new L.Icon(
         {
-            iconUrl: require("./work.png" === icon ? "./work.png" : ("./info.png" === icon ? "./info.png" : "./danger.png")),
-            iconSize: ("./work.png" === icon ? [35, 35] : ("./info.png" === icon ? [30, 30] : [50, 40])),
+            iconUrl: require("./work.png"==icon?"./work.png":"./danger.png"),
+            iconSize: ("./work.png"==icon?[35,35]:[50,40]),
         }
     );
     return (
         <Marker position={[x, y]} icon={markerIcon}>;
             <Popup>
-                {title} <br />{creator+"  -  "+date} <br />{desc}<br />{info}
+                {event}
             </Popup>
         </Marker>
 
     );
 }
 
-export default CityMap;
+export default CityMapLocation;

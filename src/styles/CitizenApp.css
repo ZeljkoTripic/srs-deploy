@@ -1,158 +1,213 @@
 .mainArea {
   display: flex;
   flex-direction: row;
-  background-color: #505A5B;
-  padding: 0.5% 0.5% 5.5% 0.5%;
-  min-height: 80vh;
-  border-radius: 8vw;
-  width: 95%;
-  min-height: 50vh;
+  width: 100%;
   margin: auto;
+  margin-left: 0px;
   position: relative;
 }
+
 .contentArea {
   position: relative;
   width: 100%;
 }
 
-.mapArea {
+.mapAreaPick2 {
+  margin: auto;
+  margin-top:20px;
+  width: 85%;
+  height: 300px;
+  border-radius: 5px;
+} 
 
-  border: 1vmin solid rgb(200, 167, 37);
-  width: 70vw;
-  margin: 2% auto auto auto;
-}
-.mapAreaPick .leaflet-container {
-  height: 35vh;
+.leaflet-container {
+  height: 100%;
   width: 100%;
-  margin-bottom: 1vh;
+  border-radius: 5px;
 }
-.mapArea .leaflet-container {
-  height: 78vh;
-  width: 70vw;
-}
-.reportArea{
+
+.reportArea {
   display: flex;
   justify-content: center;
-  max-width: 74vw;
-  margin-top: 4vmin;
+  min-width: 100%;
   color: white;
+  margin: 4vmin auto auto auto;
 }
-.report{
+
+.report {
   text-align: center;
-  /* background-color:#343F3E; */
   font-size: calc(3px + 3vmin);
-  border-radius: 60px;
-  padding: 3vmin 3vmin 3vmin 3vmin;
   font-style: italic;
   height: 67%;
-  width: 74vmin;
-  margin-right: 0;
-}
-.mapDiv {
-  margin-top: 3vh;
+  width: 92%;
 }
 
-.menu {
-  margin-left: 1vw;
-  margin-top: 1.5vh;
-  font-size: calc(3vmin);
+.buttonDiv {
+  text-align: center;
+ }
 
+.menu1{
+  position: fixed;
+  z-index: 100;
+  background-color: inherit;
+  margin:auto;
 }
 
-.newReport {
-  margin-top: 3vh;
-  color: white;
+@media only screen and (max-width: 1100px) {
+  .menu1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    bottom: 0px;
+    padding-bottom: 5px;
+    font-size: 2.9vmin;
+    background-color:#152f4b;
+    padding-left: 10px;;
+    padding-top: 5px;
+  }
+
+  .contentArea{
+    margin: auto;
+    position: relative;
+    z-index: 1;
+  }
+  #mapImg, #reportImg{
+    height: 16vmin;
+  }
+  #historyImg, #logoutImg{
+    height: 16vmin;
+  }
 }
+@media only screen and (min-width: 1100px) {
+
+  .menu1{
+    margin-top: 0px;
+    margin-left: 28px;
+    font-size: calc(2.1vmin);
+    width: 150px;
+  }
+  .contentArea{
+    margin-left: 12vw;
+  }
+  #mapImg, #reportImg{
+    height: 12vmin;
+  }
+  #historyImg, #logoutImg{
+    height: 12vmin;
+  }
+  .buttonDiv {
+    margin: auto;
+    margin-top: 2px;
+    width: 120px;
+   }
+   .button_label{
+    min-width: 130px;
+    margin: auto;
+   }
+   .report{
+    width: 70%
+   }
+   .mapAreaPick2{
+    height: 500px;
+   }
+}
+
 
 .menu_button {
-  background-color: transparent;
-  border: 0px
-}
-.menu_button:hover{
-  opacity: 0.6;
-    transition: 0.5s;
-}
-
-.menu_button_img_report {
-  height: 16vmin;
-  background-color: transparent;
-}
-
-.menu_button_img_map {
-  height: 16vmin;
-  background-color: transparent;
-}
-
-.menu_button_img_history {
-  height: 18vmin;
-  background-color: transparent;
-}
-
-.myReports {
-  margin-top: 3vh;
-}
-
-.button_label {
+  border: 0px;
   text-align: center;
-  color: azure;
 }
+
+.menu_button:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
 
 .combo1 {
+  margin-top: 3px;
   height: 25px;
   font-size: medium;
-   border-radius: 30px;
+  border-radius: 5px;
+  outline: none;
+}
+.user-data{
+  font-size: 10px
 }
 
-.reportTitle{
-  width: 97%;
+.reportTitle {
+  margin-top: 3px;
+  width: 83%;
   height: 2vmin;
   font-size: 80%;
-  border-radius: 30px;
+  border-radius: 5px;
   padding: 2% 2% 2% 2%;
+  border: none;
+  outline: none;
 }
 
-.submit{
-  width: 200px;
-  font-size: medium;
-  font-weight: bold;
-  border-radius: 30px;
-  border: none;
+.submit {
+    font-size: calc(2px + 2vmin);
+    color: rgb(255, 255, 255);
+    display: block;
+    margin: 20px auto;
+    padding: 2%;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
 }
-#content{
-  width: 97%;
+.submit:hover {
+    background-position: left;
+}
+.text-area{
+  margin-top: 3px;
+  width: 96%;
+  font-size: 70%;
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+#content {
   height: 21vmin;
-  font-size:70%;
-  border-radius: 30px;
-  padding: 2% 2% 2% 2%;
 }
 
 #note {
-  width: 97%;
-  height: 3vmin;
-  font-size:70%;
-  border-radius: 30px;
-  padding: 1% 1% 1% 1.5%;
-
+  height: 6vmin;
+ 
 }
+
 #template {
   margin-top: 15px;
+  margin-bottom: 20px;
   font-size: calc(3px + 4vmin);
 }
-.reportsInfoPanel{
+
+.reportsInfoPanel {
   margin: auto;
-  width: 60vw;
+  width: 90%;
 }
+
 .reportInfo {
-  width: 60vw;
+  width: 90%;
   min-height: 20vmin;
-  background-color: #a3c4c7;
-  margin: 1vmin 1vmin 1vmin 1vmin;
+  background-color: #ffffff;
+  margin: 1vmin auto 1vmin auto;
   padding: 10px 10px 10px 10px;
-  border-radius: 40px;
+  border-radius: 15px;
+  resize: none;
+  font-size: calc(2px + 2vmin);
 }
+
 #picker {
   text-align: center;
 }
+
 #send {
   font-size: calc(8px + 1vmax);
   background-color: #90dfaa;
@@ -166,23 +221,37 @@
   margin-left: 2.2vmin;
   margin-top: 40px
 }
-.menu_button_logout_img{
+
+.menu_button_logout_img {
   width: 12vmin;
 }
-.infoMessage {
+
+.infoMessage1 {
   color: aliceblue;
   font: 20px;
   text-align: center;
   margin: auto;
-  
+  margin-top: 15px;
+
 }
-.info_p{
-  color: white;
+
+.info_p {
+  color: rgb(0, 0, 0);
   margin-left: auto;
   margin-right: auto;
   margin-top: 20%;
-  width: 80%;
+  width: 70%;
   font-size: calc(10px + 2vmin);
   text-align: center;
 
 }
+.infoMessage {
+  margin: 20% auto auto auto;
+  font-size: calc(2vmin + 5px);
+  text-align: center;
+  color: white;
+}
+#red-text{
+  color: red
+}
+

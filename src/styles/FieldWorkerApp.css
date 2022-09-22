@@ -6,9 +6,18 @@
 .infoButton {
     background-color: transparent;
     border-style: none;
-    position: absolute;
-    right: 3%;
-    top: 18%;
+    margin-right: 10px;
+}
+
+.mapButton {
+    background-color: transparent;
+    border-style: none;
+    margin-right: 15px;
+}
+
+.mapButton:hover {
+    opacity: 0.6;
+    transition: 0.5s;
 }
 
 .infoButtonExpanded {
@@ -16,37 +25,69 @@
     border-style: none;
     position: absolute;
     right: 3%;
-    top: 10%;
+    top: 4%;
+}
+
+.mapButtonExpanded {
+    background-color: transparent;
+    border-style: none;
+    position: absolute;
+    right: 3%;
+    top: 30%;
 }
 
 .assignment {
 
-    background-color: rgb(120, 127, 134);
+    background-color:white;
     margin: 3vh auto 0 auto;
     width: 90%;
-    border-radius: 40px;
-    height: 15vh;
+    border-radius: 10px;
+    min-height: 15vh;
     text-align: center;
     position: relative;
-    font-size: 2vmin;
+    font-size: calc(2px + 2vmin);
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
 }
-
+.user{
+    position: absolute;
+    left: 40px;
+    bottom: -2px;
+    color: white;
+    font-size: 19px;
+}
 .assignmentExpanded {
 
     background-color: rgb(157, 165, 173);
     margin: 3vh auto 0 auto;
     width: 90%;
-    border-radius: 40px;
-    height: 50vh;
+    border-radius: 10px;
+    min-height: 50vh;
     position: relative;
-    font-size: 3vmin;
+    font-size: calc(2px + 2vmin);
     padding-bottom: 5px;
+    padding-left: 5px;
 }
 
+
 .info {
+    width: 85%;
+    margin-left: 5px;
+    text-align:left;
+    font-size: calc(2vmin + 2px);
+    
+}
+
+.infoExtended{
     position: absolute;
-    top: 2%;
+    top: 0%;
     left: 2%;
+    width: 70%;
+    text-align:left;
+    font-size: calc(2vmin + 2px);
+    word-break: normal;
+    white-space: normal;
 }
 
 .btn1 {
@@ -57,8 +98,11 @@
     border-radius: 10px;
     text-align: center;
     width: 15vmin;
-    background-color: rgb(72, 137, 137);
     border-color: rgb(48, 107, 159);
+    outline: none;
+    background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
 }
 
 .btn2 {
@@ -68,31 +112,35 @@
     font-size: 3.5vmin;
     border-radius: 10px;
     width: 15vmin;
-    background-color: rgb(72, 137, 137);
     border-color: rgb(48, 107, 159);
+    outline: none;
+    background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
 }
 
 .txtArea1 {
     position: absolute;
-    top: 41%;
+    top: 42%;
     left: 2%;
     width: 63%;
     height: 22%;
     border-radius: 10px;
     padding: 3px 3px 3px 5px;
-    font-size: calc(3px + 2vh);
-
+    font-size: calc(3px + 2vmin);
+    resize: none;
 }
 
 .txtArea2 {
     position: absolute;
-    top: 73%;
+    top: 75%;
     left: 2%;
     width: 63%;
     height: 22%;
     border-radius: 10px;
     padding: 3px 3px 3px 5px;
-    font-size: calc(3px + 2vh);
+    font-size: calc(3px + 2vmin);
+    resize: none;
 }
 
 .info1 {
@@ -103,23 +151,40 @@
 
 .info2 {
     position: absolute;
-    top: 66%;
+    top: 67%;
     left: 2%;
 }
 
 .buttonImg {
-    width: 10vh;
+    /* width: 10vh; */
+    height: 11vmin;
 }
 
 .buttonImgExpanded {
-    width: 13vh;
+    /* width: 10vh; */
+    height: 11vmin;
+}
+#content2{
+    margin-bottom: 20px;
 }
 
 #logout {
-    /* position: absolute; */
+    position: absolute;
     background-color: transparent;
     border: none;
-    margin-left: 86.5vw;
+    
+}
+@media only screen and (max-width: 1100px) {
+    #logout{
+        bottom:-40px;
+        right: 5px;
+    }
+}
+@media only screen and (min-width: 1100px) {
+    #logout{
+        bottom:-50px;
+        right: 10px;
+    }
 }
 
 #logout:hover {
@@ -128,25 +193,49 @@
 }
 
 .menu_button_logout_img {
-    width: 12vmin;
+    width: 9vmin;
 }
 
 .area {
     position: relative;
 }
-.infoButton:hover{
+
+.infoButton:hover {
     opacity: 0.6;
-      transition: 0.5s;
-  }
-  .infoButtonExpanded:hover{
+    transition: 0.5s;
+}
+
+.infoButtonExpanded:hover {
     opacity: 0.6;
-      transition: 0.5s;
+    transition: 0.5s;
+}
+
+.btn1:hover {
+    background-position: left;
+}
+
+.btn2:hover {
+    background-position: left;
+}
+
+.infoMessage {
+    color: aliceblue;
+    font: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20vh;
+  
   }
-  .btn1:hover{
-    opacity: 0.6;
-      transition: 0.5s;
+
+#data {
+    margin-left: 5px;
+    margin-top:10px;
+    text-align: left;
+}
+#red-text{
+    color: red
   }
-  .btn2:hover{
-    opacity: 0.6;
-      transition: 0.5s;
+  .contentArea1{
+    margin: auto;
   }
+  

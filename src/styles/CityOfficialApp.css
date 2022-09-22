@@ -1,134 +1,643 @@
+.mainArea {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: auto;
+  margin-left: 0px;
+  position: relative;
+}
 
- .contentArea {
+.contentArea {
+  position: relative;
+  width: 100%;
+}
+
+.mapArea {
+  border: 1vmin solid #152f4b;
+  margin: auto;
+}
+
+
+.buttonDiv {
+  text-align: center;
+ }
+
+.menu1{
+  position: fixed;
+  z-index: 100;
+  background-color: inherit;
+  margin:auto;
+}
+.button_label{
+  margin: auto;
+  color: white;
+}
+.report-info{
+  margin: 5px;
+  width: 55%;
+}
+.report-info-ex{
+  margin: 5px;
+  width: 25%;
+}
+.contInfo{
+  margin: 5px;
+  width: 45%;
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .menu1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    bottom: 0px;
+    padding-bottom: 5px;
+    font-size: 2.9vmin;
+    padding-left: 10px;;
+    padding-top: 5px;
+    background-color:#152f4b;
+    margin: auto;
+  }
+
+  .contentArea{
+    margin: auto;
     position: relative;
-    width: 100%;
+    z-index: 1;
   }
-  .mapArea {
+  .menu_button_img{
+    height: 10vmin;
+   }
+   .buttonDiv{
+    margin-right: 15px;
+    width: 80px;
+   }
+}
+@media only screen and (min-width: 1100px) {
 
-    border: 1vmin solid rgb(200, 167, 37);
+  .menu1{
+    margin-top: 0px;
+    margin-left: 8px;
+    font-size: calc(2.1vmin);
+    width: 150px;
+  }
+  .contentArea{
+    margin-left: 12vw;
+  }
+  #mapImg, #reportImg{
+    height: 12vmin;
+  }
+  #historyImg, #logoutImg{
+    height: 12vmin;
+  }
+  .buttonDiv {
+    margin: auto;
+    margin-top: 2px;
+    width: 120px;
+   }
+   .report{
+    width: 70%
+   }
+   .mapAreaPick2{
+    height: 500px;
+   }
+   .menu_button_img{
+    height: 9vmin;
+   }
+}
+
+
+.menu_button {
+  background-color:transparent;
+  border: 0px;
+  text-align: center;
+}
+
+.menu_button:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.event {
+  max-width: 90%;
+  background-color:  rgb(157, 165, 173);;
+  margin: 2vh auto 0 auto;
+  border-radius: 10px;
+  min-height: 15vh;
+  padding: 3px 3px 3px 3px;
+  display: flex;
+  flex-direction: row;
+  font-size: calc(2px + 2vmin);
+}
+#state-combo{
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#state-combo:hover{
+  background-position: left;
+}
+
+.newEventBtn {
+  background: transparent;
+  border: none;
+  margin:auto;
+  width: 100%;
+}
+
+.labelForNewEventBtn {
+  height: 60%;
+  color: aliceblue;
+  margin: auto;
+  font-size: calc(2px + 2vmin);
+  text-align: center;
+
+}
+
+.newEvent {
+  position: relative;
+  width: 7%;
+  margin-left: 6%;
+}
+
+.plusImg {
+  width: 10vmin;
+}
+
+.newEventExtended {
+  position: relative;
+  min-height: 63vh;
+}
+
+.eventTitle {
+  width: 80%;
+  font-size: 15px;
+  height: calc(12px + 2.5vmin);
+  margin: 4px 0 4px 0;
+  margin-left: calc(10% - 5px);
+  resize: none;
+  border-radius: 1vw;
+  padding: 5px 5px 5px 5px;
+  outline: none;
+  font-size: calc(2px + 2.5vmin);
+}
+
+.eventInfo {
+  width: 80%;
+  height: 30vh;
+  resize: none;
+  border-radius: 1vw;
+  padding: 5px 5px 5px 5px; 
+   margin-left: calc(10% - 5px);
+   font-size: calc(2px + 2.5vmin);
+   outline: none;
+}
+
+.newEventBtn2 {
+  margin-left: calc(10% - 5px);
+  display: block;
+  border-radius: 10px;
+  text-align: center;
+  border-color: rgb(48, 107, 159);
+  outline: none;
+  background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+  height: 50px;
+  font-size: calc(2px + 3vmin);
+  color:white
+}
+.newEventBtn2:hover{
+  background-position: left;
+}
+.combo:hover{
+  background-position: left;
+}
+
+.combo {
+  margin-left: 4vw;
+  border-radius: 10px;
+  border-color: rgb(48, 107, 159);
+  background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+  height: 50px;
+  font-size: calc(2px + 3vmin);
+  outline: none;
+}
+
+.logout_btn {
+  background-color: transparent;
+  border: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.logout_img {
+  width: 16vmin;
+}
+
+.logout_btn:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.addEventBtn {
+  border-radius: 1vw;
+  border: none;
+  margin:auto;
+  font-size: calc(8px + 1.5vmin);
+  background-color: rgb(200, 167, 37);
+}
+
+.newEventBtn:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.newEventBtn2:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.addEventBtn:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.p_eventInfo {
+  width: calc(100% - 100px);
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.red-text{
+  color: rgb(48, 107, 159);
+  margin-top: 2px;
+}
+.changeInfo {
+  margin: auto;
+  border-radius: 1.5vmin;
+  border: none;
+  background-color: transparent;
+}
+
+.helper {
+  width: calc(100% - 100px);
+  margin: auto;
+}
+#eventDiv{
+  background-color: white;
+}
+
+.p_extendedEventInfo {
+  width: 98%;
+  margin: auto;
+  min-height: 5vh;
+  max-height: 10vh;
+  overflow-y: scroll;
+  border: none;
+  outline: none;
+  padding: 2px 2px 2px 2px;
+  border-radius: 10px;
+}
+
+.p_extendedEventInfo::-webkit-scrollbar {
+  display: none;
+  border-radius: 10px;
+}
+
+.editableInfo {
+  width: 98%;
+  height: 12vh;
+  resize: none;
+  margin: auto;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 2px 2px 2px 2px;
+}
+.editableInfo::-webkit-scrollbar {
+  display: none;
+  border-radius: 10px;
+}
+.mapAreaPick{
+  width: calc(80% + 10px);
+  margin:auto;
+  height: 500px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.mapAreaPick .leaflet-container {
+  /* margin-left: 4vw; */
+  border-radius: 1vw;
+}
+.helpDiv {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-left: calc(10% - 5px);
+  text-align:center;
+  padding: 5px 5px 5px 5px;
+
+}
+.statementDiv{
+  background-color: white;
+  width: 88%;
+  margin-top: 10px;
+  border-radius: 10px;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 5px 5px 5px;
+  margin-left: calc(6% - 5px);
+  font-size: calc(2px + 1.9vmin);
+}
+.stateDiv{
+  margin: auto 10px auto 0px;
+  color:dodgerblue;
+  width: 35%;
+  text-align: center;
+}
+.statementBtn{
+  background-color: transparent;
+  border: none;
+}
+.acceptImg{
+  height: 8vmin;
+}
+.declineImg{
+  height: 8vmin;
+}
+.infoImg{
+  height: 8vmin;
+}
+.statementBtn:hover {
+  opacity: 0.6;
+  transition: 0.2s;
+}
+.state {
+  font-size: calc(7px + 2vmin);
+  text-align: center;
+  width: 150px;
+}
+.red-txt{
+  color: red;
+  margin-top: 0px;
+}
+.statementInfo{
+  width: 30%;
+  margin-left:10px;
+  overflow-y: scroll;
+  margin-top: 0px;
+}
+.ass-content{
+  width: 60%;
+  margin-left:10px;
+  margin-top: 35px;
+  overflow-y: scroll;
+}
+.statementExtendedInfo{
+  width: 60%;
+  margin: auto;
+  overflow-y: scroll;
+}
+.statementInfo::-webkit-scrollbar {
+  display: none;
+}
+.ass-content::-webkit-scrollbar {
+  display: none;
+}
+.statementExtendedInfo::-webkit-scrollbar {
+  display: none;
+}
+.settingsImg{
+  height: 10vmin;
+}
+.reportDiv{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 90%;
+  margin: 10px auto 0 auto;
+  border-radius: 1vmax;
+  min-height: 11vh;
+  padding: 0 4px 0 4px;
+  font-size: calc(2px + 1.9vmin);
+}
+#reportInfoImg {
+  height: 8vmin;
+}
+#reportInfoImg2 {
+  height: 9vmin;
+}
+#reportInfo{
+  background-color: transparent;
+  border: none;
+  display: block;
+}
+ #grey{
+  min-height: 100px;
+} 
+.red{
+  color: red;
+}
+#shortInfo {
+  width: 80%;
+  margin: 0px 0px 0px 0px;
+}
+#longInfo {
+  width: 80%;
+  margin: auto;
+}
+#reportStateLbl{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-top: 5px;
+}
+#reportStateLbl2{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.reportExpandedDiv{
+  display: flex;
+  flex-direction: row;
+  background-color:white;
+  width: 90%;
+  margin: 10px auto 0 auto;
+  border-radius: 1vmax;
+  padding: 0 4px 0 4px;
+  font-size: calc(2px + 2vmin);
+}
+#reportState {
+  height: 25px;
+  border-radius: 1vmax;
+  margin: auto;
+  width: 90%;
+  background-color: rgb(152, 241, 241);
+  display: block;
+  margin-top: 15px;
+}
+#assignmentBtn {
+  background-color: transparent;
+  border: none;
+  display: block;
+}
+#assignmentBtn:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+#reportInfo:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+#btnWrapper {
+  margin: auto;
+}
+#states {
+  margin: auto;
+  width: 20%;
+  font-size: calc(2vmin + 2px);
+}
+.assignmentDiv{
+  margin: auto;
+  width: 75%;
+  padding: 25px 5px 5px 5px;
+}
+.assignmentContent{
+  display: block;
+  resize: none;
+  width: 90%;
+  height: 40vh;
+  margin: auto;
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+  font-size: calc(2px + 2vmin);
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+.assignmentTitle{
+  display: block;
+  resize: none;
+  width: 90%;
+  height: 3vh;
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+  font-size: calc(2px + 2vmin);
+  border: none;
+  outline: none;
+}
+.fieldService{
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  text-align: center;
+  border-color: rgb(48, 107, 159);
+  outline: none;
+  background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+  height: 50px;
+  font-size: calc(2px + 2.5vmin);
+}
+.assignAssignment{
+  margin:auto;
+  margin-top: 30px;
+  display: block;
+  width: 90px;
+  border-radius: 10px;
+  text-align: center;
+  border-color: rgb(48, 107, 159);
+  outline: none;
+  background: linear-gradient(to left, cornflowerblue 50%, salmon 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+  height: 50px;
+  font-size: calc(2px + 2.5vmin);
+}
+.assignAssignment:hover {
+  background-position: left;
+}
+.deleteBtn{
+  border: none;
+  background-color: transparent;
+}
+.deleteBtn:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 1100px) {
+  .mapArea {
+    width: 85vw;
+    height: 61vh;
+    margin: auto;
+  }
+  
+  .mapArea .leaflet-container {
+    width: 85vw;
+    height: 61vh;
+  }
+}
+@media only screen and (min-width: 1100px) {
+
+  .mapArea {
     width: 70vw;
-    margin: 6% auto auto auto;
   }
-  .mapAreaPick .leaflet-container {
-    height: 35vh;
-    width: 100%;
-    margin-bottom: 1vh;
-  }
+  
   .mapArea .leaflet-container {
     height: 78vh;
     width: 70vw;
   }
-  .mapDiv {
-    margin-top: 3vh;
-  }
-  
-  .menu {
-    margin-left: 1vw;
-    margin-top: 1.5vh;
-    font-size: calc(3vmin);
-  
-  }
-  .menu_button {
-    background-color: transparent;
-    border: 0px
-  }
-  
-  .menu_button_img_reports {
-    height: 16vmin;
-    background-color: transparent;
-  }
-  
-  .menu_button_img_map {
-    height: 16vmin;
-    background-color: transparent;
-  }
-  
-  .menu_button_img_arrived {
-    height: 17.5vmin;
-    background-color: transparent;
-  }
-  .menu_button_img_events {
-    height: 16vmin;
-    background-color: transparent;
-  }
-  .button_label {
-    text-align: center;
-    color: azure;
-  }
-
-
-  .logoutBtn {
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    bottom: 0.2vh;
-    right: 1vw;
-  }
-  .logoutImg{
-    height: 10vmin;
-  }
-
-  
-.event{
-  width: 85%;
-  background-color: aqua;
-  margin: 2vh auto 0 auto;
-  border-radius: 3vmin;
-  min-height: 12vh;
-  padding: 5px 5px 5px 5px;
 }
-.newEventBtn {
-  background: none;
-  border: none;
-  position: absolute;
-  top: 8%;
-  left: 36vmin;
+.menu_button_img{
+  height: 10vmin;
 }
-.labelForNewEventBtn {
-  height: 60%;
-  color: aliceblue;
-  display: inline;
-  position: absolute;
-  top: 30%;
-  left: 8%;
-  font-size: large;
-
+#submitId{
+  margin-right: 4vw;
+  margin-left: auto;
 }
-.newEvent {
-  position: relative;
-  height: 11vh;
+.infoMsgDiv{
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: calc(2px + 2.5vmin);
 }
-.plusImg {
-  width: 10vmin;
-}
-.newEventExtended{
-  position: relative;
-  height: 40vh;
-}
-.eventTitle{
-  width: 50vmin;
-  font-size: 15px;
-  height: 18px;
+.header-info{
+  color: white;
   margin: auto;
-  position: absolute;
-  top: 1vh;
-  left: 7vw;
+  width: 30%;
+  text-align: center;
+  font-size: 19px;
 }
-.eventInfo{
-  width: 50vmin;
-  height: 30vh;
-  position: absolute;
-  top: 7vh;
-  left: 7vw;
+#err-msg{
+  color: white;
+  margin: auto;
+  width: 80%;
+  text-align: center;
 }
-.newEventBtn2{
-  background: none;
-  border: none;
-  position: absolute;
+.user-img{
+  margin: auto;
+  height: 25vmin;
 }
-.combo{
-  height: 24px;
-  position: absolute;
-  top: 1vh;
-  left: 70vmin;
+.user-info{
+  text-align: center;
+  margin: auto;
+  min-width: 25vw;
+  margin-top:20vh;
+}
+.user-data{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  font-size: calc(2px + 2.5vmin);
 }
